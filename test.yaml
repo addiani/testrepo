@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: localhost
   become: yes
   become_method: sudo
   gather_facts: no
@@ -20,11 +20,4 @@
       group:
         name: managers
         state: present
-    - name: Create file
-      file: 
-        path: /tmp/testfile
-        state: touch
-        mode: 0765
-        group: managers
-        owner: bob
-                
+
